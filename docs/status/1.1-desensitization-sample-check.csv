@@ -1,0 +1,4 @@
+sample_id,doc_type,sensitive_field_type,original_value_masked,masking_pass,checker,checked_at,notes
+SAMPLE-001,markdown,mobile,yes,true,qa_a,2026-03-31T10:00:00+08:00,
+SAMPLE-001,markdown,email,yes,true,qa_a,2026-03-31T10:00:00+08:00,
+SAMPLE-002,docx,id_card,no,false,qa_b,2026-03-31T10:05:00+08:00,规则未命中需修复

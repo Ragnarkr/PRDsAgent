@@ -1,0 +1,3 @@
+sample_id,source,grant_scope,grantor,granted_at,expires_at,status,evidence_link,notes
+SAMPLE-001,prd_pool_a.md,internal_eval_only,owner_a,2026-03-30T09:00:00+08:00,2026-06-30T23:59:59+08:00,approved,https://example.local/auth/record/1,
+SAMPLE-002,prd_pool_b.docx,internal_eval_only,owner_b,2026-03-30T09:10:00+08:00,2026-06-30T23:59:59+08:00,pending,https://example.local/auth/record/2,等待授权确认
