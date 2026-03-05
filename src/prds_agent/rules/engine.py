@@ -29,15 +29,52 @@ FUZZY_TERMS = (
     "等",
 )
 
+COMPLETENESS_KEYWORDS = {
+    "目标": ("目标", "核心目标", "goal", "objective"),
+    "范围": ("范围", "in-scope", "out-of-scope", "scope"),
+    "依赖": ("依赖", "前置条件", "dependency", "dependencies"),
+    "验收标准": ACCEPTANCE_KEYWORDS,
+}
+
+METRIC_PATTERN = re.compile(
+    r"(?P<metric>[\u4e00-\u9fa5A-Za-z][\u4e00-\u9fa5A-Za-z0-9_/\-\s]{0,30}?)\s*"
+    r"(?P<op><=|>=|<|>)\s*(?P<value>\d+(?:\.\d+)?)\s*(?P<unit>%|ms|s|秒|分钟|小时|天)?",
+    flags=re.IGNORECASE,
+)
+
 
 class RuleEngine:
     """Week 1 rule engine skeleton for PRD quality checks."""
 
     def analyze(self, document: ParsedDocument) -> RuleReport:
         issues: list[RuleIssue] = []
+        issues.extend(self.check_completeness(document))
         issues.extend(self.check_acceptance_criteria(document))
+        issues.extend(self.detect_basic_conflicts(document))
         issues.extend(self.detect_fuzzy_terms(document))
         return RuleReport(source_path=document.source_path, issues=issues)
+
+    def check_completeness(self, document: ParsedDocument) -> list[RuleIssue]:
+        text_lower = document.content.lower()
+        missing_categories: list[str] = []
+
+        for category, keywords in COMPLETENESS_KEYWORDS.items():
+            if not any(keyword in text_lower for keyword in keywords):
+                missing_categories.append(category)
+
+        if not missing_categories:
+            return []
+
+        return [
+            RuleIssue(
+                rule_id="CM001",
+                category="completeness_check",
+                severity="warning",
+                message=f"需求完整性缺失：{', '.join(missing_categories)}",
+                suggestion="补充目标、范围、依赖、验收标准等关键要素。",
+                evidence=document.content[:120],
+            )
+        ]
 
     def check_acceptance_criteria(self, document: ParsedDocument) -> list[RuleIssue]:
         text_lower = document.content.lower()
@@ -63,6 +100,44 @@ class RuleEngine:
                 )
             ]
         return []
+
+    def detect_basic_conflicts(self, document: ParsedDocument) -> list[RuleIssue]:
+        constraints: dict[str, list[tuple[str, float, int, str]]] = {}
+
+        for line_no, line in enumerate(document.content.splitlines(), start=1):
+            for match in METRIC_PATTERN.finditer(line):
+                metric = _normalize_metric(match.group("metric"))
+                op = match.group("op")
+                value = float(match.group("value"))
+                unit = (match.group("unit") or "").lower()
+                key = f"{metric}|{unit}"
+                constraints.setdefault(key, []).append((op, value, line_no, line.strip()))
+
+        issues: list[RuleIssue] = []
+        for metric_key, entries in constraints.items():
+            lower_bounds = [entry for entry in entries if entry[0] in (">", ">=")]
+            upper_bounds = [entry for entry in entries if entry[0] in ("<", "<=")]
+            for lower in lower_bounds:
+                for upper in upper_bounds:
+                    if _is_conflict(lower[0], lower[1], upper[0], upper[1]):
+                        metric_name = metric_key.split("|", maxsplit=1)[0]
+                        issues.append(
+                            RuleIssue(
+                                rule_id="CF001",
+                                category="conflict_detection",
+                                severity="error",
+                                message=f"检测到数值冲突：指标[{metric_name}]约束互斥。",
+                                suggestion="统一该指标的上下界，避免相互矛盾。",
+                                evidence=f"L{lower[2]}: {lower[3]} | L{upper[2]}: {upper[3]}",
+                                line_no=min(lower[2], upper[2]),
+                            )
+                        )
+                        break
+                else:
+                    continue
+                break
+
+        return issues
 
     def detect_fuzzy_terms(self, document: ParsedDocument) -> list[RuleIssue]:
         issues: list[RuleIssue] = []
@@ -94,3 +169,16 @@ def _contains_measurement_target(text: str) -> bool:
         r"p(95|99)",
     )
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in patterns)
+
+
+def _normalize_metric(metric: str) -> str:
+    return re.sub(r"\s+", "", metric).lower()
+
+
+def _is_conflict(lower_op: str, lower_val: float, upper_op: str, upper_val: float) -> bool:
+    if lower_val > upper_val:
+        return True
+    if lower_val < upper_val:
+        return False
+    # lower_val == upper_val
+    return not (lower_op == ">=" and upper_op == "<=")

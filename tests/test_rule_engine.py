@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -41,6 +40,53 @@ class RuleEngineTest(unittest.TestCase):
         report = self.engine.analyze(document)
         self.assertFalse(any(issue.rule_id == "AC001" for issue in report.issues))
         self.assertFalse(any(issue.rule_id == "AC002" for issue in report.issues))
+
+    def test_completeness_check_missing_categories(self) -> None:
+        content = "这里仅描述实现方案，不包含目标、范围和依赖定义。"
+        document = ParsedDocument(
+            source_path=Path("demo.md"),
+            content=content,
+            sections=[Section(title="全文", level=1, content=content)],
+        )
+        report = self.engine.analyze(document)
+        issue_ids = {issue.rule_id for issue in report.issues}
+        self.assertIn("CM001", issue_ids)
+
+    def test_basic_conflict_detection(self) -> None:
+        content = "\n".join(
+            [
+                "目标：提升接口稳定性",
+                "范围：M1 PoC",
+                "依赖：压测环境",
+                "验收标准：响应时间<=3秒",
+                "验收标准：响应时间>=10秒",
+            ]
+        )
+        document = ParsedDocument(
+            source_path=Path("demo.md"),
+            content=content,
+            sections=[Section(title="验收标准", level=1, content=content)],
+        )
+        report = self.engine.analyze(document)
+        self.assertTrue(any(issue.rule_id == "CF001" for issue in report.issues))
+
+    def test_no_conflict_when_bounds_are_valid(self) -> None:
+        content = "\n".join(
+            [
+                "目标：提升接口稳定性",
+                "范围：M1 PoC",
+                "依赖：压测环境",
+                "验收标准：响应时间>=1秒",
+                "验收标准：响应时间<=3秒",
+            ]
+        )
+        document = ParsedDocument(
+            source_path=Path("demo.md"),
+            content=content,
+            sections=[Section(title="验收标准", level=1, content=content)],
+        )
+        report = self.engine.analyze(document)
+        self.assertFalse(any(issue.rule_id == "CF001" for issue in report.issues))
 
 
 if __name__ == "__main__":

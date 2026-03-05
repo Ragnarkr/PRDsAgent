@@ -1,3 +1,3 @@
 """PRDsAgent core package."""
 
-__all__ = ["parsers", "rules"]
+__all__ = ["parsers", "rules", "metrics"]
