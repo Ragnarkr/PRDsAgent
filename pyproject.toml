@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prds-agent"
+version = "0.1.0"
+description = "M1 Week1 foundation for PRDsAgent"
+requires-python = ">=3.11"
+dependencies = [
+  "python-docx>=1.1.2,<2.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
