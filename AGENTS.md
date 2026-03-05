@@ -72,3 +72,14 @@ Pull requests should include:
 - Use `.env.example` to document required configuration keys.
 - Keep machine-specific paths and credentials out of version control.
 - Pin dependency versions and review licenses when adding package managers.
+
+## Project Local Skills
+
+### Available skills (repository-scoped)
+- `prdsagent-m1-gate-evidence`: Complete M1 task `1.1` minimum acceptance package (evidence files, mandatory validations, and status backfill for `tasks.md` + execution board).  
+  Trigger when requests mention `1.1 数据授权`, `脱敏`, `未授权数据不得进入评测集`, `覆盖率=100%`, `证据文件`, or `Gate 前置闸门`.  
+  Path: `E:\porjects\PRDsAgent\skills\prdsagent-m1-gate-evidence\SKILL.md`
+
+### Usage notes
+- This skill is project-only and must not be treated as a global skill.
+- Prefer running bundled scripts in `skills/prdsagent-m1-gate-evidence/scripts/` to avoid manual mistakes.
