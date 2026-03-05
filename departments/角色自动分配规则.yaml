@@ -1,0 +1,59 @@
+version: "1.0"
+rule_name: "role_auto_assignment"
+
+workflow:
+  - step: "角色发现"
+    action: "优先遍历 departments/*/*.md 读取角色定义，若为空则回退 roles/*/*.md"
+  - step: "任务分析"
+    action: "提取任务关键词与任务类型"
+  - step: "智能匹配"
+    action: "按关键词匹配度选择最合适角色"
+  - step: "任务分发"
+    action: "分配给目标角色并通知团队"
+
+priority_mapping:
+  - category: "产品/业务需求"
+    role: "产品经理"
+    owner: "陈思远"
+    department: "产品管理部"
+    keywords: ["产品", "业务", "需求分析", "价值", "用户体验", "范围定义"]
+  - category: "技术架构/选型"
+    role: "技术负责人"
+    owner: "李承泽"
+    department: "技术架构部"
+    keywords: ["架构", "技术选型", "可扩展性", "性能", "安全", "合规"]
+  - category: "编码/开发实现"
+    role: "开发工程师"
+    owner: "王浩然"
+    department: "软件开发部"
+    keywords: ["开发", "编码", "实现", "接口", "重构", "bug修复"]
+  - category: "测试/质量保证"
+    role: "测试工程师"
+    owner: "赵雨桐"
+    department: "质量保障部"
+    keywords: ["测试", "验收", "用例", "质量", "覆盖率", "缺陷"]
+  - category: "计划/资源/风险"
+    role: "项目经理"
+    owner: "周明远"
+    department: "项目管理部"
+    keywords: ["计划", "排期", "资源", "风险", "里程碑", "协调"]
+  - category: "部署/运维/监控"
+    role: "DevOps工程师"
+    owner: "孙嘉宁"
+    department: "运维平台部"
+    keywords: ["部署", "运维", "监控", "告警", "发布", "灾备"]
+
+fallback:
+  role: "项目经理"
+  owner: "周明远"
+  reason: "无法明确匹配时进行二次分发"
+
+audit:
+  required_fields:
+    - "task_id"
+    - "timestamp"
+    - "task_keywords"
+    - "matched_role"
+    - "matched_owner"
+    - "match_reason"
+    - "is_fallback"
