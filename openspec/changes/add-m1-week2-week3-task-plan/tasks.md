@@ -65,17 +65,19 @@
   前置依赖：Week2 全部关键交付完成
   状态说明：Completed；完成情况：开发与测试双角色并行执行 `2.1`，回归测试 `pytest -q` 通过（18 passed），基础 API 联调（`/health`、`/analyze`）返回 200，缺陷清单为零开放缺陷并确认 `P0=0`；证据链接：`docs/status/2.1-poc-integration-regression-report-2026-03-06.md`、`docs/status/2.1-defect-list-2026-03-06.csv`、`docs/status/2.1-defect-closure-report-2026-03-06.md`
 
-- [ ] 2.2 Gate 指标复测（三轮）  
+- [x] 2.2 Gate 指标复测（三轮）  
   负责人：赵雨桐（准确率）+ 孙嘉宁（性能）；截止日期：2026-04-09 12:00  
   交付物：三轮指标报告（准确率/P95/成功率/5xx率/超时率）、首轮复测签收记录（<=2026-04-08 16:00）  
   验收标准：准确率>=80%，P95<=6s，成功率>=99%，5xx率<=0.5%，超时率<=0.5%（按统一测量协议）  
   前置依赖：2.1 缺陷闭环
+  状态说明：Completed；完成情况：QA 与 DevOps 角色并行完成三轮复测，准确率最差值=100.00%，P95最差值=616.611ms，成功率最差值=100.00%，5xx率=0.00%，超时率=0.00%，首轮签收已完成且 `P0=0`；证据链接：`docs/status/2.2-gate-metrics-retest-2026-03-06.md`、`docs/status/2.2-round1-signoff-2026-03-06.md`、`docs/status/perf-test-data/staging_retest_20260306_2_2_gate_report.json`
 
-- [ ] 2.3 监控告警与回滚链路最终验收  
+- [x] 2.3 监控告警与回滚链路最终验收  
   负责人：孙嘉宁；截止日期：2026-04-09  
   交付物：告警演练报告、回滚SOP验证记录  
   验收标准：P1 告警 5 分钟内送达率>=99%；P2 告警 10 分钟内送达率>=99%；统计窗口 24h；样本>=20；回滚演练成功并可复盘  
   前置依赖：1.6 初版能力
+  状态说明：Completed；完成情况：已完成最终告警送达率演练（24h样本=24，P1 5分钟内=100%，P2 10分钟内=100%）与回滚链路最终验收（RTO=3.108s，RPO=0s，回滚后 `/analyze`=200），无阻塞项；证据链接：`docs/status/2.3-alert-rollback-final-acceptance-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306_2_3.md`、`docs/status/ops-drill/ops_rollback_drill_20260306_2_3.md`
 
 - [ ] 2.4 降级触发条件检查与决策（固定时点）  
   负责人：周明远（主责）+ 李承泽；截止日期：2026-04-08 18:00  

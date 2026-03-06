@@ -1,0 +1,277 @@
+{
+  "summary": {
+    "window_hours": 24,
+    "total_events": 24,
+    "p1_events": 12,
+    "p2_events": 12,
+    "p1_delivery_rate_within_5m": 1.0,
+    "p2_delivery_rate_within_10m": 1.0,
+    "passed": true
+  },
+  "events": [
+    {
+      "event_id": "ALRT-001",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:07:15",
+      "delivered_at": "2026-03-05T16:09:53",
+      "delivery_latency_sec": 158,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #1"
+    },
+    {
+      "event_id": "ALRT-002",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:10:15",
+      "delivered_at": "2026-03-05T16:11:14",
+      "delivery_latency_sec": 59,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #2"
+    },
+    {
+      "event_id": "ALRT-003",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:13:15",
+      "delivered_at": "2026-03-05T16:15:55",
+      "delivery_latency_sec": 160,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #3"
+    },
+    {
+      "event_id": "ALRT-004",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:16:15",
+      "delivered_at": "2026-03-05T16:18:04",
+      "delivery_latency_sec": 109,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #4"
+    },
+    {
+      "event_id": "ALRT-005",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:19:15",
+      "delivered_at": "2026-03-05T16:21:58",
+      "delivery_latency_sec": 163,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #5"
+    },
+    {
+      "event_id": "ALRT-006",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:22:15",
+      "delivered_at": "2026-03-05T16:24:38",
+      "delivery_latency_sec": 143,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #6"
+    },
+    {
+      "event_id": "ALRT-007",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:25:15",
+      "delivered_at": "2026-03-05T16:27:14",
+      "delivery_latency_sec": 119,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #7"
+    },
+    {
+      "event_id": "ALRT-008",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:28:15",
+      "delivered_at": "2026-03-05T16:30:43",
+      "delivery_latency_sec": 148,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #8"
+    },
+    {
+      "event_id": "ALRT-009",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:31:15",
+      "delivered_at": "2026-03-05T16:33:39",
+      "delivery_latency_sec": 144,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #9"
+    },
+    {
+      "event_id": "ALRT-010",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:34:15",
+      "delivered_at": "2026-03-05T16:35:23",
+      "delivery_latency_sec": 68,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #10"
+    },
+    {
+      "event_id": "ALRT-011",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:37:15",
+      "delivered_at": "2026-03-05T16:39:51",
+      "delivery_latency_sec": 156,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #11"
+    },
+    {
+      "event_id": "ALRT-012",
+      "severity": "P1",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:40:15",
+      "delivered_at": "2026-03-05T16:41:54",
+      "delivery_latency_sec": 99,
+      "sla_sec": 300,
+      "delivered_within_sla": true,
+      "message": "P1 drill signal #12"
+    },
+    {
+      "event_id": "ALRT-013",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:43:15",
+      "delivered_at": "2026-03-05T16:43:50",
+      "delivery_latency_sec": 35,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #13"
+    },
+    {
+      "event_id": "ALRT-014",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:46:15",
+      "delivered_at": "2026-03-05T16:52:49",
+      "delivery_latency_sec": 394,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #14"
+    },
+    {
+      "event_id": "ALRT-015",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:49:15",
+      "delivered_at": "2026-03-05T16:50:52",
+      "delivery_latency_sec": 97,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #15"
+    },
+    {
+      "event_id": "ALRT-016",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:52:15",
+      "delivered_at": "2026-03-05T16:55:33",
+      "delivery_latency_sec": 198,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #16"
+    },
+    {
+      "event_id": "ALRT-017",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:55:15",
+      "delivered_at": "2026-03-05T16:57:37",
+      "delivery_latency_sec": 142,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #17"
+    },
+    {
+      "event_id": "ALRT-018",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T16:58:15",
+      "delivered_at": "2026-03-05T17:04:47",
+      "delivery_latency_sec": 392,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #18"
+    },
+    {
+      "event_id": "ALRT-019",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:01:15",
+      "delivered_at": "2026-03-05T17:03:08",
+      "delivery_latency_sec": 113,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #19"
+    },
+    {
+      "event_id": "ALRT-020",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:04:15",
+      "delivered_at": "2026-03-05T17:10:09",
+      "delivery_latency_sec": 354,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #20"
+    },
+    {
+      "event_id": "ALRT-021",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:07:15",
+      "delivered_at": "2026-03-05T17:10:48",
+      "delivery_latency_sec": 213,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #21"
+    },
+    {
+      "event_id": "ALRT-022",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:10:15",
+      "delivered_at": "2026-03-05T17:17:14",
+      "delivery_latency_sec": 419,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #22"
+    },
+    {
+      "event_id": "ALRT-023",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:13:15",
+      "delivered_at": "2026-03-05T17:16:40",
+      "delivery_latency_sec": 205,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #23"
+    },
+    {
+      "event_id": "ALRT-024",
+      "severity": "P2",
+      "channel": "ops-notify-simulated",
+      "triggered_at": "2026-03-05T17:16:15",
+      "delivered_at": "2026-03-05T17:17:37",
+      "delivery_latency_sec": 82,
+      "sla_sec": 600,
+      "delivered_within_sla": true,
+      "message": "P2 drill signal #24"
+    }
+  ]
+}

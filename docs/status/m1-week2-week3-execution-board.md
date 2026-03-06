@@ -13,8 +13,8 @@
 | 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | Completed |
 | 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | Completed |
 | 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Completed |
-| 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Not Started |
-| 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Not Started |
+| 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Completed |
+| 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Completed |
 | 2.4 | 周明远 + 李承泽 | 2026-04-08 18:00 | 2.1 + 2.2 首轮签收 | Not Started |
 | 2.5 | 周明远 | 2026-04-09 18:00 | 2.3, 2.4 | Not Started |
 | 2.6 | 周明远 | 2026-04-10 16:00 | 2.2, 2.3, 2.4 | Not Started |
@@ -66,6 +66,8 @@
 - `1.7`：`docs/status/release-rollback-gate.md`、`docs/status/1.6-1.7-monitoring-alert-plan.md`
 - `1.8`：`docs/status/1.8-pm-summary-plan.md`、`docs/status/week2-notion-sync-backfill-2026-03-06.md`
 - `2.1`：`docs/status/2.1-poc-integration-regression-report-2026-03-06.md`、`docs/status/2.1-defect-list-2026-03-06.csv`、`docs/status/2.1-defect-closure-report-2026-03-06.md`
+- `2.2`：`docs/status/2.2-gate-metrics-retest-2026-03-06.md`、`docs/status/2.2-round1-signoff-2026-03-06.md`、`docs/status/perf-test-data/staging_retest_20260306_2_2_gate_report.json`
+- `2.3`：`docs/status/2.3-alert-rollback-final-acceptance-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306_2_3.md`、`docs/status/ops-drill/ops_rollback_drill_20260306_2_3.md`
 - `3.1`：`docs/status/defect-severity-standard.md`
 - `3.2`：`docs/status/week2-deliverables-2026-03-05.md`
 
@@ -82,6 +84,10 @@
 
 - `2.1`（Completed）：已完成 PoC 联调回归与缺陷闭环，`pytest -q` 通过（18 passed），基础 API 联调通过，`P0=0`；证据：`docs/status/2.1-poc-integration-regression-report-2026-03-06.md`、`docs/status/2.1-defect-closure-report-2026-03-06.md`。
 - `2.1` Notion页：`https://www.notion.so/31b96011ac3e81049442cff54c15dbc6`
+- `2.2`（Completed）：已完成三轮 Gate 指标复测与首轮签收，最差值 `accuracy=100% / p95=616.611ms / success=100% / 5xx=0% / timeout=0%`，`P0=0`；证据：`docs/status/2.2-gate-metrics-retest-2026-03-06.md`。
+- `2.2` Notion页：`https://www.notion.so/31b96011ac3e81a5ad14d5720aa1b790`
+- `2.3`（Completed）：已完成告警与回滚链路最终验收，`P1<=5m=100% / P2<=10m=100% / RTO=3.108s / RPO=0s`，回滚后 `/analyze`=200；证据：`docs/status/2.3-alert-rollback-final-acceptance-2026-03-06.md`。
+- `2.3` Notion页：`https://www.notion.so/31b96011ac3e817e8692cd7954d2d7f0`
 
 ## 8. Notion Sync Status (2026-03-06)
 - Scope: Week2 tasks `1.1~1.8`

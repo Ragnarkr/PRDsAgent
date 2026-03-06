@@ -1,0 +1,51 @@
+{
+  "policy": {
+    "retry_mode": "latest_attempt",
+    "count_4xx_as_success": false
+  },
+  "thresholds": {
+    "p95_ms": 6000.0,
+    "success_rate": 0.99,
+    "error_5xx_rate": 0.005,
+    "timeout_rate": 0.005
+  },
+  "rounds": [
+    {
+      "total_requests": 500,
+      "success_requests": 500,
+      "error_5xx_requests": 0,
+      "timeout_requests": 0,
+      "p95_ms": 604.078,
+      "success_rate": 1.0,
+      "error_5xx_rate": 0.0,
+      "timeout_rate": 0.0
+    },
+    {
+      "total_requests": 500,
+      "success_requests": 500,
+      "error_5xx_requests": 0,
+      "timeout_requests": 0,
+      "p95_ms": 592.538,
+      "success_rate": 1.0,
+      "error_5xx_rate": 0.0,
+      "timeout_rate": 0.0
+    },
+    {
+      "total_requests": 500,
+      "success_requests": 500,
+      "error_5xx_requests": 0,
+      "timeout_requests": 0,
+      "p95_ms": 616.611,
+      "success_rate": 1.0,
+      "error_5xx_rate": 0.0,
+      "timeout_rate": 0.0
+    }
+  ],
+  "summary": {
+    "p95_ms": 616.611,
+    "success_rate": 1.0,
+    "error_5xx_rate": 0.0,
+    "timeout_rate": 0.0
+  },
+  "gate_passed": true
+}
