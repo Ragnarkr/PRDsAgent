@@ -1,0 +1,7 @@
+# dataset-m1-v1 hash summary
+snapshot_date=2026-03-06
+dataset_root=docs/status/dataset-m1-v1
+manifest_file=docs/status/dataset-m1-v1/manifest.jsonl
+manifest_sha256=bef20e103791e7ef8f4af9481a85a2cf207d90cc8fb257aae833ccec14fe9f94
+dataset_sha256=9d8fb846c919c0bfb5f4478cfb249cdad073a030868c54a40d5504df3d85d0db
+verification=passed

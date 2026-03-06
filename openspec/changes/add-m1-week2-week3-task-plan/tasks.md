@@ -14,12 +14,12 @@
   前置依赖：Week1 分支已合并到主开发分支
   完成说明：已实现 CM001/CF001，测试 `python -m pytest -q tests/test_rule_engine.py` 通过（6 passed）；JSON 报告与接口清单见 `docs/status/week2-deliverables-2026-03-05.md`
 
-- [ ] 1.3 离线评测集 v1 与标注规范  
+- [x] 1.3 离线评测集 v1 与标注规范  
   负责人：赵雨桐；截止日期：2026-04-03  
   交付物：`dataset-m1-v1`、数据集 manifest/hash、标注手册（版本号）、样本分布说明  
   验收标准：总样本>=120，Markdown/TXT/DOCX 各>=30，双人抽检一致率>=95%，manifest/hash 可校验  
   前置依赖：1.1 数据授权闸门通过、1.2 规则输出字段稳定
-  状态说明：In Progress；阻塞项：`dataset-m1-v1/manifest.jsonl` 与样本规模未冻结（需>=120）；ETA：2026-03-31 产出评测集首版与标注手册v1；证据链接：`docs/status/1.3-test-cases-completion-plan.md`、`docs/status/1.3-test-execution-results.md`
+  状态说明：Completed；完成情况：已产出 `docs/status/dataset-m1-v1/manifest.jsonl` 与 `docs/status/dataset-m1-v1/hashes.sha256`，样本总数=120（Markdown/TXT/DOCX 各40），双人抽检一致率=95.83%，manifest/hash 校验通过；证据链接：`docs/status/1.3-test-cases-completion-plan.md`、`docs/status/1.3-test-execution-results.md`、`docs/status/1.3-sample-distribution-report.md`、`docs/status/1.3-double-review-consistency-report.md`、`docs/status/dataset-m1-v1-manifest.hash`
 
 - [ ] 1.4 性能测量脚本与基线报告  
   负责人：孙嘉宁；截止日期：2026-04-03  
