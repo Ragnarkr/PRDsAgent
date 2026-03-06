@@ -1,17 +1,17 @@
 # M1 Week2/Week3 执行总看板（PM）
 
-## 1. 全任务清单（状态更新：2026-03-05）
+## 1. 全任务清单（状态更新：2026-03-06）
 
 | 任务ID | 负责人 | 截止日期 | 前置依赖 | 状态 |
 |---|---|---|---|---|
 | 1.1 | 孙嘉宁 + 赵雨桐 | 2026-03-31 | 无 | Completed |
 | 1.2 | 王浩然 | 2026-04-02 | Week1 分支合入 | Completed |
-| 1.3 | 赵雨桐 | 2026-04-03 | 1.1, 1.2 | In Progress (Test Plan Created) |
-| 1.4 | 孙嘉宁 | 2026-04-03 | 1.2 | In Progress (Baseline Plan Created) |
-| 1.5 | 李承泽 | 2026-04-04 | 1.3, 1.4 | In Progress (Integration Plan Created) |
-| 1.6 | 孙嘉宁 | 2026-04-05 | 1.4 | In Progress (Monitoring Plan Created) |
-| 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | In Progress (Alert Plan Created) |
-| 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | In Progress (Summary Plan Created) |
+| 1.3 | 赵雨桐 | 2026-04-03 | 1.1, 1.2 | In Progress |
+| 1.4 | 孙嘉宁 | 2026-04-03 | 1.2 | In Progress |
+| 1.5 | 李承泽 | 2026-04-04 | 1.3, 1.4 | In Progress |
+| 1.6 | 孙嘉宁 | 2026-04-05 | 1.4 | In Progress |
+| 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | In Progress |
+| 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | In Progress |
 | 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Not Started |
 | 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Not Started |
 | 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Not Started |
@@ -60,6 +60,24 @@
 
 ## 6. 完成证据链接
 
+- `1.1`：`docs/status/1.1-data-authorization-register.csv`、`docs/status/1.1-access-gate-check.md`、`docs/status/1.1-desensitization-rules-v1.md`、`docs/status/1.1-desensitization-sampling-report.md`
 - `1.2`：`src/prds_agent/rules/engine.py`、`tests/test_rule_engine.py`、`docs/status/week2-deliverables-2026-03-05.md`
 - `3.1`：`docs/status/defect-severity-standard.md`
 - `3.2`：`docs/status/week2-deliverables-2026-03-05.md`
+
+## 7. 状态说明与阻塞（Week2）
+
+- `1.3`（In Progress）：阻塞项为评测集 manifest/hash 与样本规模未冻结；ETA：2026-03-31 产出首版。
+- `1.4`（In Progress）：阻塞项为 staging 压测环境与完整请求画像未就绪；ETA：2026-04-01 完成三轮压测首版。
+- `1.5`（In Progress）：阻塞项为依赖 `1.3/1.4` 首版产出；ETA：2026-04-02 完成技术审查初稿。
+- `1.6`（In Progress）：阻塞项为依赖 `1.4` 环境稳定与性能基线首版；ETA：2026-04-03 完成首轮演练。
+- `1.7`（In Progress）：阻塞项为依赖 `1.4` 基线报告与 `1.6` 演练结果；ETA：2026-04-04 完成准入矩阵初版。
+- `1.8`（In Progress）：阻塞项为依赖 `1.3~1.7` 阻塞闭环；ETA：2026-04-05 完成 Week2 收口。
+
+## 8. Notion Sync Blocker (2026-03-06)
+- Scope: Week2 tasks `1.1~1.8`
+- Status: `Blocked` (Notion integration channel)
+- Blocker detail: Notion MCP handshake failed when initializing `https://mcp.notion.com/mcp`
+- Local source of truth during outage: `openspec/changes/add-m1-week2-week3-task-plan/tasks.md` + this execution board
+- Backfill package: `docs/status/week2-notion-sync-backfill-2026-03-06.md`
+- Recovery SLA: after MCP恢复, 30 minutes 内完成 Notion 回填
