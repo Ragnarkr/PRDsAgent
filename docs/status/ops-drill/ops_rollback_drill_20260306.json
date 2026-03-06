@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-03-06T14:26:16",
+  "base_url": "http://127.0.0.1:8080",
+  "sample_file": "docs/status/dataset-m1-v1/markdown/M1V1-MD-001.md",
+  "rto_seconds": 2.662,
+  "rpo_seconds": 0.0,
+  "rto_threshold_seconds": 1800.0,
+  "rpo_threshold_seconds": 900.0,
+  "post_rollback_analyze_status": 200,
+  "passed": true,
+  "timeline": [
+    {
+      "step": "pre_server_healthy",
+      "at": "2026-03-06T14:26:20"
+    },
+    {
+      "step": "failure_triggered",
+      "at": "2026-03-06T14:26:20"
+    },
+    {
+      "step": "rollback_server_healthy",
+      "at": "2026-03-06T14:26:22",
+      "ok": true
+    },
+    {
+      "step": "post_rollback_analyze",
+      "at": "2026-03-06T14:26:23",
+      "status_code": 200
+    }
+  ],
+  "logs": {
+    "pre_stdout": "docs/status/ops-drill/ops_rollback_drill_20260306_pre_stdout.log",
+    "pre_stderr": "docs/status/ops-drill/ops_rollback_drill_20260306_pre_stderr.log",
+    "post_stdout": "docs/status/ops-drill/ops_rollback_drill_20260306_post_stdout.log",
+    "post_stderr": "docs/status/ops-drill/ops_rollback_drill_20260306_post_stderr.log"
+  },
+  "analyze_result": {
+    "status_code": 200,
+    "body": {
+      "code": 200,
+      "message": "success",
+      "data": {
+        "source_path": "M1V1-MD-001.md",
+        "issues": [
+          {
+            "rule_id": "CM001",
+            "category": "completeness_check",
+            "severity": "warning",
+            "message": "需求完整性缺失：目标, 范围, 依赖",
+            "suggestion": "补充目标、范围、依赖、验收标准等关键要素。",
+            "evidence": "# 需求样本 M1V1-MD-001\n\n## 背景\n\n该样本属于 `auth` 领域，来源 `history_repo`。\n\n## 验收标准\n\n- 输出包含 rule_id / severity / evidence\n\n- 关键流程可复现且"
+          },
+          {
+            "rule_id": "AC002",
+            "category": "acceptance_criteria",
+            "severity": "warning",
+            "message": "验收标准存在但缺少量化目标。",
+            "suggestion": "增加明确阈值（例如：响应时间<=3秒、准确率>=90%）。",
+            "evidence": null
+          },
+          {
+            "rule_id": "FT001",
+            "category": "fuzzy_terms",
+            "severity": "warning",
+            "message": "检测到模糊词汇: 稳定",
+            "suggestion": "请替换为可度量、可验证的具体表述。",
+            "evidence": "边界条件：若输入缺失版本号，默认回退上一个稳定版本并记录审计日志。",
+            "line_no": 21
+          }
+        ]
+      }
+    }
+  }
+}

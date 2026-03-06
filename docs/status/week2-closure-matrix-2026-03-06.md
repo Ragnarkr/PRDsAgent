@@ -2,7 +2,7 @@
 
 ## 1. 状态基线
 - 状态字典：`Not Started | In Progress | Completed | Blocked`
-- 本次基线口径：`1.1=Completed`、`1.2=Completed`、`1.3=Completed`、`1.4=Completed`、`1.5=Completed`、`1.6~1.8=In Progress`
+- 本次基线口径：`1.1=Completed`、`1.2=Completed`、`1.3=Completed`、`1.4=Completed`、`1.5=Completed`、`1.6=Completed`、`1.7~1.8=In Progress`
 
 ## 2. Week2 任务矩阵（1.1~1.8）
 
@@ -13,13 +13,13 @@
 | 1.3 | Completed | 通过（样本总数=120；三格式各40；双人抽检一致率=95.83%；manifest/hash可校验） | `docs/status/1.3-test-cases-completion-plan.md`；`docs/status/1.3-test-execution-results.md`；`docs/status/1.3-sample-distribution-report.md`；`docs/status/1.3-double-review-consistency-report.md`；`docs/status/dataset-m1-v1-manifest.hash` | 无 |
 | 1.4 | Completed | 通过（真实staging三轮：p95=543.316ms；成功率=100%；5xx=0%；超时=0%） | `docs/status/1.4-performance-baseline-plan.md`；`docs/status/1.4-performance-real-staging-execution-2026-03-06.md`；`docs/status/perf-test-data/staging_real_20260306_2_gate_report.json`；`docs/status/perf-test-data/staging_real_20260306_2_5xx_distribution.md` | 无 |
 | 1.5 | Completed | 通过（技术评审签字完成，指标口径冻结v1.0） | `docs/status/1.5-technical-integration-plan.md`；`docs/status/tech-review-and-freeze.md` | 无 |
-| 1.6 | In Progress | 待验收（告警链路与回滚演练未闭环） | `docs/status/1.6-1.7-monitoring-alert-plan.md`；`docs/status/devops-baseline-alert-plan.md` | 待完成告警验收与回滚首轮演练 |
-| 1.7 | In Progress | 待验收（准入矩阵未完成联签） | `docs/status/1.6-1.7-monitoring-alert-plan.md`；`docs/status/release-rollback-gate.md` | 依赖1.4与1.6产出 |
+| 1.6 | Completed | 通过（告警送达率与回滚演练已闭环） | `docs/status/1.6-1.7-monitoring-alert-plan.md`；`docs/status/1.6-ops-compliance-closure-2026-03-06.md`；`docs/status/ops-drill/ops_alert_delivery_20260306.md`；`docs/status/ops-drill/ops_rollback_drill_20260306.md` | 无 |
+| 1.7 | In Progress | 待验收（准入矩阵待联签冻结） | `docs/status/1.6-1.7-monitoring-alert-plan.md`；`docs/status/release-rollback-gate.md` | 待完成 QA/PM 联签与版本公告 |
 | 1.8 | In Progress | 待验收（汇总收口依赖1.3~1.7） | `docs/status/1.8-pm-summary-plan.md`；`docs/status/m1-week2-week3-execution-board.md` | 上游任务未全部闭环 |
 
 ## 3. 当前收口结论
-- Week2 已完成：`1.1`、`1.2`、`1.3`、`1.4`、`1.5`
-- Week2 进行中：`1.6`、`1.7`、`1.8`
+- Week2 已完成：`1.1`、`1.2`、`1.3`、`1.4`、`1.5`、`1.6`
+- Week2 进行中：`1.7`、`1.8`
 - 当前不可宣告 Week2 全量完成，需继续按依赖链推进并完成证据闭环。
 
 ## 4. Notion Sync Status

@@ -35,19 +35,19 @@
   前置依赖：1.3、1.4 产出初版
   状态说明：Completed；完成情况：`1.3/1.4` 前置已验收，已完成技术评审签字与口径冻结确认（Tech Lead/QA/DevOps/PM）；证据链接：`docs/status/1.5-technical-integration-plan.md`、`docs/status/tech-review-and-freeze.md`
 
-- [ ] 1.6 运维与合规闭环任务  
+- [x] 1.6 运维与合规闭环任务  
   负责人：孙嘉宁；截止日期：2026-04-05  
   交付物：告警链路验证记录、发布回滚演练记录、合规检查清单  
   验收标准：告警链路可触发可送达；回滚演练完成；RBAC/审计/脱敏检查通过；任一关键控制不通过则 Gate=No-Go  
   前置依赖：1.4 压测环境可用
-  状态说明：In Progress；当前情况：`1.4` 前置已满足，待完成告警链路验收与回滚演练首轮记录；ETA：2026-04-03 完成告警与回滚演练首轮；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/devops-baseline-alert-plan.md`
+  状态说明：Completed；完成情况：已完成 24h 窗口告警送达率演练（样本=24，P1 5分钟内送达率=100%，P2 10分钟内送达率=100%）与真实回滚演练（RTO=2.662s，RPO=0s，回滚后 `/analyze`=200），并完成 RBAC/审计/脱敏证据归档；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`
 
 - [ ] 1.7 发布基线与回滚准入矩阵  
   负责人：孙嘉宁（主责）+ 李承泽；截止日期：2026-04-05  
   交付物：版本命名规范、`staging->Gate` 晋级准入清单、回滚触发阈值、RTO/RPO、回滚后健康检查清单  
   验收标准：发布与回滚流程可演练；责任人明确；Gate 材料可复核  
   前置依赖：1.4 基线报告 + 1.6 回滚演练初版
-  状态说明：In Progress；当前情况：`1.4` 前置已满足，待 `1.6` 演练结果确认后完成准入矩阵联签；ETA：2026-04-04 完成准入矩阵初版；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
+  状态说明：In Progress；当前情况：`1.6` 演练结果已确认，待完成准入矩阵联签与版本公告冻结；ETA：2026-04-04 完成准入矩阵初版；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
 
 - [ ] 1.8 周中风险复盘与阻塞治理  
   负责人：周明远；截止日期：2026-04-05  
