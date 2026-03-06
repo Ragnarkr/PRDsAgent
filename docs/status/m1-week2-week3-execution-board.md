@@ -12,7 +12,7 @@
 | 1.6 | 孙嘉宁 | 2026-04-05 | 1.4 | Completed |
 | 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | Completed |
 | 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | Completed |
-| 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Not Started |
+| 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Completed |
 | 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Not Started |
 | 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Not Started |
 | 2.4 | 周明远 + 李承泽 | 2026-04-08 18:00 | 2.1 + 2.2 首轮签收 | Not Started |
@@ -65,6 +65,7 @@
 - `1.6`：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`
 - `1.7`：`docs/status/release-rollback-gate.md`、`docs/status/1.6-1.7-monitoring-alert-plan.md`
 - `1.8`：`docs/status/1.8-pm-summary-plan.md`、`docs/status/week2-notion-sync-backfill-2026-03-06.md`
+- `2.1`：`docs/status/2.1-poc-integration-regression-report-2026-03-06.md`、`docs/status/2.1-defect-list-2026-03-06.csv`、`docs/status/2.1-defect-closure-report-2026-03-06.md`
 - `3.1`：`docs/status/defect-severity-standard.md`
 - `3.2`：`docs/status/week2-deliverables-2026-03-05.md`
 
@@ -76,6 +77,11 @@
 - `1.6`（Completed）：已完成告警送达率验收（24h样本=24，P1 5分钟内=100%，P2 10分钟内=100%）与真实回滚演练（RTO=2.662s，RPO=0s，回滚后 `/analyze`=200）；证据：`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`。
 - `1.7`（Completed）：已完成准入矩阵冻结、阈值口径固化、回滚健康检查验证与 DevOps/Tech Lead/PM 联签；证据：`docs/status/release-rollback-gate.md`。
 - `1.8`（Completed）：已完成 Week2 风险复盘与阻塞治理收口，Notion 回填已留痕；证据：`docs/status/1.8-pm-summary-plan.md`。
+
+## 7.1 状态说明与阻塞（Week3）
+
+- `2.1`（Completed）：已完成 PoC 联调回归与缺陷闭环，`pytest -q` 通过（18 passed），基础 API 联调通过，`P0=0`；证据：`docs/status/2.1-poc-integration-regression-report-2026-03-06.md`、`docs/status/2.1-defect-closure-report-2026-03-06.md`。
+- `2.1` Notion页：`https://www.notion.so/31b96011ac3e81049442cff54c15dbc6`
 
 ## 8. Notion Sync Status (2026-03-06)
 - Scope: Week2 tasks `1.1~1.8`

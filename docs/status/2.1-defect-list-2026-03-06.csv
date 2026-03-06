@@ -1,0 +1,2 @@
+﻿defect_id,severity,title,status,owner,eta,evidence
+QA-2.1-20260306-000,N/A,Zero-open-defect summary for 2.1 regression,Closed,赵雨桐,N/A,"pytest -q => 18 passed in 1.64s; python -m pytest -q tests/test_rule_engine.py => 6 passed in 0.27s"
