@@ -1,0 +1,92 @@
+# 六角色配置文件 - PRDsAgent 项目专用
+
+roles:
+  - name: product_manager
+    display_name: "产品经理"
+    person: "陈思远"
+    priority: 1
+    decision_weight:
+      business: high
+      technical: low
+    expertise:
+      - 需求分析
+      - 用户体验
+      - 业务价值评估
+      - 验收标准制定
+
+  - name: tech_lead
+    display_name: "技术负责人"
+    person: "李承泽"
+    priority: 2
+    decision_weight:
+      business: low
+      technical: high
+    expertise:
+      - 架构设计
+      - 技术选型
+      - 性能优化
+      - 安全合规
+
+  - name: developer
+    display_name: "开发工程师"
+    person: "王浩然"
+    priority: 3
+    decision_weight:
+      business: low
+      technical: medium
+    expertise:
+      - 代码实现
+      - 开发效率
+      - 技术债务
+      - 工具链集成
+
+  - name: qa_engineer
+    display_name: "测试工程师"
+    person: "赵雨桐"
+    priority: 4
+    decision_weight:
+      business: medium
+      technical: medium
+    expertise:
+      - 测试策略
+      - 质量保证
+      - 自动化测试
+      - 缺陷管理
+
+  - name: devops_engineer
+    display_name: "运维工程师"
+    person: "孙嘉宁"
+    priority: 5
+    decision_weight:
+      business: low
+      technical: high
+    expertise:
+      - 部署运维
+      - 监控告警
+      - 容灾备份
+      - 性能调优
+
+  - name: project_manager
+    display_name: "项目经理"
+    person: "周明远"
+    priority: 6
+    decision_weight:
+      business: high
+      technical: medium
+    expertise:
+      - 项目规划
+      - 资源协调
+      - 风险管理
+      - 进度控制
+
+# 决策权重说明
+# business: high/medium/low - 业务决策权重
+# technical: high/medium/low - 技术决策权重
+# priority: 1-6 - 发言优先级（数字越小优先级越高）
+
+# 冲突解决规则
+conflict_resolution:
+  business_disputes: product_manager    # 业务争议由产品经理决定
+  technical_disputes: tech_lead         # 技术争议由技术负责人决定
+  resource_disputes: project_manager    # 资源争议由项目经理决定
+  quality_disputes: qa_engineer         # 质量争议由测试工程师决定

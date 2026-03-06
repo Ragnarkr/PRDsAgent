@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: prds-agent
+Version: 0.1.0
+Summary: M1 Week1 foundation for PRDsAgent
+Requires-Python: >=3.11
+Requires-Dist: python-docx<2.0.0,>=1.1.2
