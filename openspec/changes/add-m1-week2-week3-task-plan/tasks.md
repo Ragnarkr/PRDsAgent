@@ -26,7 +26,7 @@
   交付物：压测脚本、请求画像版本、压测工具版本、随机种子、节点规格说明、三轮压测原始结果、P95/成功率/5xx率/超时率计算说明  
   验收标准：可复现 500 请求 + 20 并发 + 10 分钟模型；明确 4xx/重试计数边界与 5xx/超时率分母公式；指标计算可追溯  
   前置依赖：1.2 接口清单 v0.1
-  状态说明：In Progress；阻塞项：staging 压测环境与完整请求画像尚未就绪；ETA：2026-04-01 完成三轮压测首版数据；证据链接：`docs/status/1.4-performance-baseline-plan.md`、`docs/status/perf-and-ops-baseline.md`
+  状态说明：In Progress；完成进展：已新增参数化脚本 `scripts/run_perf_baseline_rounds.py` 并产出 dry-run 三轮 JSONL 与 Gate 汇总（`docs/status/perf-test-data/staging_dryrun_20260306_*`）；当前阻塞项：真实 staging 压测环境与完整请求画像尚未就绪；dry-run 显示 `5xx=0.60%` 高于阈值 `0.50%`，需先排查错误链路；ETA：2026-04-01 完成真实三轮首版数据；证据链接：`docs/status/1.4-performance-baseline-plan.md`、`docs/status/1.4-performance-dryrun-execution-2026-03-06.md`、`docs/status/perf-test-data/staging_dryrun_20260306_gate_report.md`
 
 - [ ] 1.5 PoC 技术审查与口径冻结  
   负责人：李承泽；截止日期：2026-04-04  

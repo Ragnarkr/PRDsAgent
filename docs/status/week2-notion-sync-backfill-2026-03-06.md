@@ -24,7 +24,7 @@
 | 1.1 | 授权登记、闸门检查、脱敏规则、抽检报告 | Passed（未授权样本=0；脱敏覆盖率=100%） | `docs/status/1.1-data-authorization-register.csv`; `docs/status/1.1-access-gate-check.md`; `docs/status/1.1-desensitization-rules-v1.md`; `docs/status/1.1-desensitization-sampling-report.md` | None |
 | 1.2 | 规则实现、JSON 报告格式、接口清单 v0.1 | Passed（规则测试通过） | `src/prds_agent/rules/engine.py`; `tests/test_rule_engine.py`; `docs/status/week2-deliverables-2026-03-05.md` | None |
 | 1.3 | dataset/manifest/hash/标注手册 | Passed（120样本；三格式各40；抽检一致率95.83%；hash可校验） | `docs/status/1.3-test-cases-completion-plan.md`; `docs/status/1.3-test-execution-results.md`; `docs/status/1.3-sample-distribution-report.md`; `docs/status/1.3-double-review-consistency-report.md`; `docs/status/dataset-m1-v1-manifest.hash` | None |
-| 1.4 | 压测脚本/三轮原始结果/指标计算说明 | Pending | `docs/status/1.4-performance-baseline-plan.md`; `docs/status/perf-and-ops-baseline.md` | staging压测环境未就绪；ETA 2026-04-01 |
+| 1.4 | 压测脚本/三轮原始结果/指标计算说明 | Pending（dry-run已完成，真实staging待执行） | `docs/status/1.4-performance-baseline-plan.md`; `docs/status/1.4-performance-dryrun-execution-2026-03-06.md`; `docs/status/perf-test-data/staging_dryrun_20260306_gate_report.md` | staging压测环境未就绪；dry-run 5xx率=0.60%>0.50%；ETA 2026-04-01 |
 | 1.5 | 技术审查记录/口径冻结确认单 | Pending | `docs/status/1.5-technical-integration-plan.md`; `docs/status/subagent-architecture-design-review-2026-03-05.md` | 依赖 1.3/1.4 初版；ETA 2026-04-02 |
 | 1.6 | 告警链路验证/回滚演练/合规检查 | Pending | `docs/status/1.6-1.7-monitoring-alert-plan.md`; `docs/status/devops-baseline-alert-plan.md` | 依赖 1.4 首版；ETA 2026-04-03 |
 | 1.7 | 准入矩阵/回滚阈值/RTO-RPO | Pending | `docs/status/1.6-1.7-monitoring-alert-plan.md`; `docs/status/release-rollback-gate.md` | 依赖 1.4 与 1.6；ETA 2026-04-04 |
