@@ -15,8 +15,8 @@
 | 1.4 | 性能测量脚本与基线报告 | Completed | M1-W2-1.4-性能测量脚本与基线报告-Completed |
 | 1.5 | PoC 技术审查与口径冻结 | Completed | M1-W2-1.5-PoC 技术审查与口径冻结-Completed |
 | 1.6 | 运维与合规闭环任务 | Completed | M1-W2-1.6-运维与合规闭环任务-Completed |
-| 1.7 | 发布基线与回滚准入矩阵 | In Progress | M1-W2-1.7-发布基线与回滚准入矩阵-In Progress |
-| 1.8 | 周中风险复盘与阻塞治理 | In Progress | M1-W2-1.8-周中风险复盘与阻塞治理-In Progress |
+| 1.7 | 发布基线与回滚准入矩阵 | Completed | M1-W2-1.7-发布基线与回滚准入矩阵-Completed |
+| 1.8 | 周中风险复盘与阻塞治理 | Completed | M1-W2-1.8-周中风险复盘与阻塞治理-Completed |
 
 ## 3. Task Payload For Notion Body
 | task_id | deliverables | acceptance result | evidence links | blocker + ETA |
@@ -27,16 +27,20 @@
 | 1.4 | 压测脚本/三轮原始结果/指标计算说明 | Passed（真实staging三轮通过） | `docs/status/1.4-performance-baseline-plan.md`; `docs/status/1.4-performance-real-staging-execution-2026-03-06.md`; `docs/status/perf-test-data/staging_real_20260306_2_gate_report.json`; `docs/status/perf-test-data/staging_real_20260306_2_5xx_distribution.md` | None |
 | 1.5 | 技术审查记录/口径冻结确认单 | Passed（四方签字完成） | `docs/status/1.5-technical-integration-plan.md`; `docs/status/tech-review-and-freeze.md` | None |
 | 1.6 | 告警链路验证/回滚演练/合规检查 | Passed（24h样本=24，P1 5分钟内=100%，P2 10分钟内=100%；回滚RTO=2.662s，RPO=0s） | `docs/status/1.6-1.7-monitoring-alert-plan.md`; `docs/status/1.6-ops-compliance-closure-2026-03-06.md`; `docs/status/ops-drill/ops_alert_delivery_20260306.md`; `docs/status/ops-drill/ops_rollback_drill_20260306.md` | None |
-| 1.7 | 准入矩阵/回滚阈值/RTO-RPO | Pending | `docs/status/1.6-1.7-monitoring-alert-plan.md`; `docs/status/release-rollback-gate.md` | 1.6 已完成，待 QA/PM 联签与版本公告冻结；ETA 2026-04-04 |
-| 1.8 | 风险台账/阻塞升级记录/周收口矩阵 | Pending | `docs/status/1.8-pm-summary-plan.md`; `docs/status/m1-week2-week3-execution-board.md`; `docs/status/week2-closure-matrix-2026-03-06.md` | 依赖 1.3~1.7 全部可验收；ETA 2026-04-05 |
+| 1.7 | 准入矩阵/回滚阈值/RTO-RPO | Passed（准入条目、阈值口径、联签全部完成） | `docs/status/1.6-1.7-monitoring-alert-plan.md`; `docs/status/release-rollback-gate.md` | None |
+| 1.8 | 风险台账/阻塞升级记录/周收口矩阵 | Passed（风险复盘、阻塞治理、Notion回填留痕完成） | `docs/status/1.8-pm-summary-plan.md`; `docs/status/m1-week2-week3-execution-board.md`; `docs/status/week2-closure-matrix-2026-03-06.md` | None |
 
 ## 4. Notion Write Attempt Log
 - Attempt #1, 2026-03-06: `list_mcp_resources(server=notion)`
   - Result: `MCP startup failed: handshaking with MCP server failed ... https://mcp.notion.com/mcp`
 - Attempt #2, 2026-03-06: `list_mcp_resource_templates(server=notion)`
   - Result: same handshake failure.
+- Attempt #3, 2026-03-06: `notion-create-pages(data_source_id=31a96011-ac3e-80cf-b7a7-000b3e60ab6b)`
+  - Result: success, created
+    - `https://www.notion.so/31b96011ac3e818ca57ec3c2c24d9a24` (`1.7`)
+    - `https://www.notion.so/31b96011ac3e81a7bcd8ebfdae1e8389` (`1.8`)
 
 ## 5. Recovery Rule
-- Current sync status: `Blocked` (integration channel).
-- Recovery SLA: backfill to Notion within 30 minutes after Notion MCP channel is restored.
+- Current sync status: `Completed`.
+- Recovery SLA: satisfied (backfill completed within 30 minutes after MCP recovery).
 - Conflict handling: if local and Notion conflict at the same timestamp, PM latest backfill wins.

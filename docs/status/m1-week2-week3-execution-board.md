@@ -10,8 +10,8 @@
 | 1.4 | 孙嘉宁 | 2026-04-03 | 1.2 | Completed |
 | 1.5 | 李承泽 | 2026-04-04 | 1.3, 1.4 | Completed |
 | 1.6 | 孙嘉宁 | 2026-04-05 | 1.4 | Completed |
-| 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | In Progress |
-| 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | In Progress |
+| 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | Completed |
+| 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | Completed |
 | 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Not Started |
 | 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Not Started |
 | 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Not Started |
@@ -52,7 +52,7 @@
 
 ## 5. 今日启动动作（2026-03-05）
 
-- [ ] PM 建立 Notion 主看板并挂载本文件链接
+- [x] PM 建立 Notion 主看板并完成回填留痕
 - [x] 各负责人确认任务五元组与依赖关系
 - [x] Tech Lead 组织 30 分钟“口径冻结预对齐会”
 - [x] DevOps 准备压测环境与告警演练环境
@@ -63,6 +63,8 @@
 - `1.1`：`docs/status/1.1-data-authorization-register.csv`、`docs/status/1.1-access-gate-check.md`、`docs/status/1.1-desensitization-rules-v1.md`、`docs/status/1.1-desensitization-sampling-report.md`
 - `1.2`：`src/prds_agent/rules/engine.py`、`tests/test_rule_engine.py`、`docs/status/week2-deliverables-2026-03-05.md`
 - `1.6`：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`
+- `1.7`：`docs/status/release-rollback-gate.md`、`docs/status/1.6-1.7-monitoring-alert-plan.md`
+- `1.8`：`docs/status/1.8-pm-summary-plan.md`、`docs/status/week2-notion-sync-backfill-2026-03-06.md`
 - `3.1`：`docs/status/defect-severity-standard.md`
 - `3.2`：`docs/status/week2-deliverables-2026-03-05.md`
 
@@ -72,13 +74,13 @@
 - `1.4`（Completed）：真实 staging 三轮已完成（500*3，预热50/轮，并发20），最差值结果 `p95=543.316ms / success=100% / 5xx=0% / timeout=0%`，Gate 通过；证据：`docs/status/1.4-performance-real-staging-execution-2026-03-06.md`。
 - `1.5`（Completed）：已完成技术评审签字与口径冻结确认（Tech Lead/QA/DevOps/PM 四方签收）；证据：`docs/status/1.5-technical-integration-plan.md`、`docs/status/tech-review-and-freeze.md`。
 - `1.6`（Completed）：已完成告警送达率验收（24h样本=24，P1 5分钟内=100%，P2 10分钟内=100%）与真实回滚演练（RTO=2.662s，RPO=0s，回滚后 `/analyze`=200）；证据：`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`。
-- `1.7`（In Progress）：`1.6` 已完成并提供实测证据，当前待完成准入矩阵联签与版本公告冻结；ETA：2026-04-04 完成准入矩阵初版。
-- `1.8`（In Progress）：阻塞项为依赖 `1.3~1.7` 阻塞闭环；ETA：2026-04-05 完成 Week2 收口。
+- `1.7`（Completed）：已完成准入矩阵冻结、阈值口径固化、回滚健康检查验证与 DevOps/Tech Lead/PM 联签；证据：`docs/status/release-rollback-gate.md`。
+- `1.8`（Completed）：已完成 Week2 风险复盘与阻塞治理收口，Notion 回填已留痕；证据：`docs/status/1.8-pm-summary-plan.md`。
 
-## 8. Notion Sync Blocker (2026-03-06)
+## 8. Notion Sync Status (2026-03-06)
 - Scope: Week2 tasks `1.1~1.8`
-- Status: `Blocked` (Notion integration channel)
-- Blocker detail: Notion MCP handshake failed when initializing `https://mcp.notion.com/mcp`
-- Local source of truth during outage: `openspec/changes/add-m1-week2-week3-task-plan/tasks.md` + this execution board
+- Status: `Completed` (Notion MCP recovered)
 - Backfill package: `docs/status/week2-notion-sync-backfill-2026-03-06.md`
-- Recovery SLA: after MCP恢复, 30 minutes 内完成 Notion 回填
+- New backfill pages:
+  - `https://www.notion.so/31b96011ac3e818ca57ec3c2c24d9a24`
+  - `https://www.notion.so/31b96011ac3e81a7bcd8ebfdae1e8389`

@@ -42,19 +42,19 @@
   前置依赖：1.4 压测环境可用
   状态说明：Completed；完成情况：已完成 24h 窗口告警送达率演练（样本=24，P1 5分钟内送达率=100%，P2 10分钟内送达率=100%）与真实回滚演练（RTO=2.662s，RPO=0s，回滚后 `/analyze`=200），并完成 RBAC/审计/脱敏证据归档；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/1.6-ops-compliance-closure-2026-03-06.md`、`docs/status/ops-drill/ops_alert_delivery_20260306.md`、`docs/status/ops-drill/ops_rollback_drill_20260306.md`
 
-- [ ] 1.7 发布基线与回滚准入矩阵  
+- [x] 1.7 发布基线与回滚准入矩阵  
   负责人：孙嘉宁（主责）+ 李承泽；截止日期：2026-04-05  
   交付物：版本命名规范、`staging->Gate` 晋级准入清单、回滚触发阈值、RTO/RPO、回滚后健康检查清单  
   验收标准：发布与回滚流程可演练；责任人明确；Gate 材料可复核  
   前置依赖：1.4 基线报告 + 1.6 回滚演练初版
-  状态说明：In Progress；当前情况：`1.6` 演练结果已确认，待完成准入矩阵联签与版本公告冻结；ETA：2026-04-04 完成准入矩阵初版；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
+  状态说明：Completed；完成情况：已冻结版本命名规范、`staging->Gate` 晋级准入条目、回滚触发阈值与 RTO/RPO 口径，回滚后健康检查项已验证，DevOps/Tech Lead/PM 联签完成；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
 
-- [ ] 1.8 周中风险复盘与阻塞治理  
+- [x] 1.8 周中风险复盘与阻塞治理  
   负责人：周明远；截止日期：2026-04-05  
   交付物：风险台账更新、阻塞升级记录、Notion 状态看板链接  
   验收标准：所有阻塞项均有 owner/时限/处理状态；超24h阻塞已升级；Notion 为主真源，故障回退后 30 分钟内完成回补  
   前置依赖：1.2~1.7 状态输入
-  状态说明：In Progress；阻塞项：依赖 1.3~1.7 当前阻塞闭环后才能完成总收口；ETA：2026-04-05 完成 Week2 汇总闭环；证据链接：`docs/status/1.8-pm-summary-plan.md`、`docs/status/m1-week2-week3-execution-board.md`
+  状态说明：Completed；完成情况：已完成 Week2 风险复盘与阻塞治理回填，阻塞项 owner/时限/状态齐全，且 Notion MCP 恢复后已完成 1.7/1.8 页面回填留痕；证据链接：`docs/status/1.8-pm-summary-plan.md`、`docs/status/m1-week2-week3-execution-board.md`、`docs/status/week2-notion-sync-backfill-2026-03-06.md`
 
 ## 2. M1 Week3 执行清单（2026-04-06 ~ 2026-04-10）
 
@@ -129,7 +129,7 @@
 ## 6. Week2 Notion Sync Backfill Record (2026-03-06)
 - Scope: `1.1~1.8`
 - Expected page title format: `M1-W2-<task_id>-<任务名>-<状态>`
-- Current sync status: `Blocked` (Notion MCP handshake failed)
-- Local fallback source: `docs/status/m1-week2-week3-execution-board.md`
+- Current sync status: `Completed` (Notion MCP recovered and backfill finished)
+- Local fallback source: `docs/status/m1-week2-week3-execution-board.md` (for outage only)
 - Backfill evidence package: `docs/status/week2-notion-sync-backfill-2026-03-06.md`
-- SLA: MCP恢复后 30 minutes 内回填 Notion
+- SLA: 已满足（恢复后 30 minutes 内完成回填）
