@@ -21,33 +21,33 @@
   前置依赖：1.1 数据授权闸门通过、1.2 规则输出字段稳定
   状态说明：Completed；完成情况：已产出 `docs/status/dataset-m1-v1/manifest.jsonl` 与 `docs/status/dataset-m1-v1/hashes.sha256`，样本总数=120（Markdown/TXT/DOCX 各40），双人抽检一致率=95.83%，manifest/hash 校验通过；证据链接：`docs/status/1.3-test-cases-completion-plan.md`、`docs/status/1.3-test-execution-results.md`、`docs/status/1.3-sample-distribution-report.md`、`docs/status/1.3-double-review-consistency-report.md`、`docs/status/dataset-m1-v1-manifest.hash`
 
-- [ ] 1.4 性能测量脚本与基线报告  
+- [x] 1.4 性能测量脚本与基线报告  
   负责人：孙嘉宁；截止日期：2026-04-03  
   交付物：压测脚本、请求画像版本、压测工具版本、随机种子、节点规格说明、三轮压测原始结果、P95/成功率/5xx率/超时率计算说明  
   验收标准：可复现 500 请求 + 20 并发 + 10 分钟模型；明确 4xx/重试计数边界与 5xx/超时率分母公式；指标计算可追溯  
   前置依赖：1.2 接口清单 v0.1
-  状态说明：In Progress；完成进展：已新增参数化脚本 `scripts/run_perf_baseline_rounds.py` 并产出 dry-run 三轮 JSONL 与 Gate 汇总（`docs/status/perf-test-data/staging_dryrun_20260306_*`）；当前阻塞项：真实 staging 压测环境与完整请求画像尚未就绪；dry-run 显示 `5xx=0.60%` 高于阈值 `0.50%`，需先排查错误链路；ETA：2026-04-01 完成真实三轮首版数据；证据链接：`docs/status/1.4-performance-baseline-plan.md`、`docs/status/1.4-performance-dryrun-execution-2026-03-06.md`、`docs/status/perf-test-data/staging_dryrun_20260306_gate_report.md`
+  状态说明：Completed；完成情况：已完成真实 staging 三轮压测（500请求/轮 + 预热50 + 并发20），并产出原始 JSONL、Gate 汇总、5xx 分布报告；最差值结果 `p95=543.316ms`、`success=100%`、`5xx=0%`、`timeout=0%`，Gate 通过；证据链接：`docs/status/1.4-performance-baseline-plan.md`、`docs/status/1.4-performance-real-staging-execution-2026-03-06.md`、`docs/status/perf-test-data/staging_real_20260306_2_gate_report.json`、`docs/status/perf-test-data/staging_real_20260306_2_5xx_distribution.md`
 
 - [ ] 1.5 PoC 技术审查与口径冻结  
   负责人：李承泽；截止日期：2026-04-04  
   交付物：技术审查记录、指标口径冻结确认单  
   验收标准：明确准确率/P95/成功率/超时率测量协议，评审人签字通过  
   前置依赖：1.3、1.4 产出初版
-  状态说明：In Progress；阻塞项：依赖 1.3/1.4 首版产出后才能冻结最终口径；ETA：2026-04-02 完成技术审查初稿；证据链接：`docs/status/1.5-technical-integration-plan.md`、`docs/status/subagent-architecture-design-review-2026-03-05.md`
+  状态说明：In Progress；当前情况：`1.3/1.4` 前置产出已就绪，待完成技术评审签字与口径冻结确认单；ETA：2026-04-02 完成技术审查初稿；证据链接：`docs/status/1.5-technical-integration-plan.md`、`docs/status/subagent-architecture-design-review-2026-03-05.md`
 
 - [ ] 1.6 运维与合规闭环任务  
   负责人：孙嘉宁；截止日期：2026-04-05  
   交付物：告警链路验证记录、发布回滚演练记录、合规检查清单  
   验收标准：告警链路可触发可送达；回滚演练完成；RBAC/审计/脱敏检查通过；任一关键控制不通过则 Gate=No-Go  
   前置依赖：1.4 压测环境可用
-  状态说明：In Progress；阻塞项：依赖 1.4 环境稳定与性能基线首版；ETA：2026-04-03 完成告警与回滚演练首轮；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/devops-baseline-alert-plan.md`
+  状态说明：In Progress；当前情况：`1.4` 前置已满足，待完成告警链路验收与回滚演练首轮记录；ETA：2026-04-03 完成告警与回滚演练首轮；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/devops-baseline-alert-plan.md`
 
 - [ ] 1.7 发布基线与回滚准入矩阵  
   负责人：孙嘉宁（主责）+ 李承泽；截止日期：2026-04-05  
   交付物：版本命名规范、`staging->Gate` 晋级准入清单、回滚触发阈值、RTO/RPO、回滚后健康检查清单  
   验收标准：发布与回滚流程可演练；责任人明确；Gate 材料可复核  
   前置依赖：1.4 基线报告 + 1.6 回滚演练初版
-  状态说明：In Progress；阻塞项：依赖 1.4 基线报告与 1.6 演练结果双确认；ETA：2026-04-04 完成准入矩阵初版；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
+  状态说明：In Progress；当前情况：`1.4` 前置已满足，待 `1.6` 演练结果确认后完成准入矩阵联签；ETA：2026-04-04 完成准入矩阵初版；证据链接：`docs/status/1.6-1.7-monitoring-alert-plan.md`、`docs/status/release-rollback-gate.md`
 
 - [ ] 1.8 周中风险复盘与阻塞治理  
   负责人：周明远；截止日期：2026-04-05  
