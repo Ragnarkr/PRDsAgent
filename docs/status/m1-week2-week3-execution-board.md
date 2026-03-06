@@ -15,9 +15,9 @@
 | 2.1 | 王浩然 + 赵雨桐 | 2026-04-08 | Week2 关键项完成 | Completed |
 | 2.2 | 赵雨桐 + 孙嘉宁 | 2026-04-09 12:00 | 2.1 | Completed |
 | 2.3 | 孙嘉宁 | 2026-04-09 | 1.6 | Completed |
-| 2.4 | 周明远 + 李承泽 | 2026-04-08 18:00 | 2.1 + 2.2 首轮签收 | Not Started |
-| 2.5 | 周明远 | 2026-04-09 18:00 | 2.3, 2.4 | Not Started |
-| 2.6 | 周明远 | 2026-04-10 16:00 | 2.2, 2.3, 2.4 | Not Started |
+| 2.4 | 周明远 + 李承泽 | 2026-04-08 18:00 | 2.1 + 2.2 首轮签收 | Completed |
+| 2.5 | 周明远 | 2026-04-09 18:00 | 2.3, 2.4 | Completed |
+| 2.6 | 周明远 | 2026-04-10 16:00 | 2.2, 2.3, 2.4 | Completed |
 | 3.1 | 赵雨桐 | 2026-04-06 | 无 | Completed |
 | 3.2 | 周明远 | 2026-04-06 | 3.1 | Completed |
 | 4.1 | 周明远 | 2026-04-07 | 1.8 | Not Started |
@@ -88,6 +88,12 @@
 - `2.2` Notion页：`https://www.notion.so/31b96011ac3e81a5ad14d5720aa1b790`
 - `2.3`（Completed）：已完成告警与回滚链路最终验收，`P1<=5m=100% / P2<=10m=100% / RTO=3.108s / RPO=0s`，回滚后 `/analyze`=200；证据：`docs/status/2.3-alert-rollback-final-acceptance-2026-03-06.md`。
 - `2.3` Notion页：`https://www.notion.so/31b96011ac3e817e8692cd7954d2d7f0`
+- `2.4`（Completed）：已完成固定时点降级触发检查，`P0=0`、`P95` 三轮均远低于 `6.5s`、准确率三轮均 `100%`，PM+Tech Lead 联合决议“恢复（不降级，非 No-Go）”；证据：`docs/status/2.4-degrade-trigger-check-and-decision-2026-03-06.md`。
+- `2.4` Notion页：`https://www.notion.so/31b96011ac3e8135a45cfeed02c01910`
+- `2.5`（Completed）：已完成 Week3 缓冲窗口执行，阻塞项（告警送达/回滚链路/降级触发/功能欠账）均闭环，且未引入新增功能；证据：`docs/status/2.5-week3-buffer-window-execution-2026-03-06.md`。
+- `2.5` Notion页：`https://www.notion.so/31b96011ac3e815d9d2dd330964f8601`
+- `2.6`（Completed）：已完成 Gate-M1 评审与结论归档，形成 14:00 锁定/15:00 评审/16:00 发布的结构化纪要并发布 `Go` 结论；证据：`docs/status/2.6-gate-m1-review-and-conclusion-2026-03-06.md`。
+- `2.6` Notion页：`https://www.notion.so/31b96011ac3e81ce9f9ce0ba8ddc77e3`
 
 ## 8. Notion Sync Status (2026-03-06)
 - Scope: Week2 tasks `1.1~1.8`
@@ -96,3 +102,14 @@
 - New backfill pages:
   - `https://www.notion.so/31b96011ac3e818ca57ec3c2c24d9a24`
   - `https://www.notion.so/31b96011ac3e81a7bcd8ebfdae1e8389`
+
+## 8.1 Notion Sync Status (Week3 incremental, 2026-03-06)
+- Scope: Week3 tasks `2.1~2.6`
+- Status: `Completed` (`2.1~2.6` all synced)
+- New pages:
+  - `2.1`：`https://www.notion.so/31b96011ac3e81049442cff54c15dbc6`
+  - `2.2`：`https://www.notion.so/31b96011ac3e81a5ad14d5720aa1b790`
+  - `2.3`：`https://www.notion.so/31b96011ac3e817e8692cd7954d2d7f0`
+  - `2.4`：`https://www.notion.so/31b96011ac3e8135a45cfeed02c01910`
+  - `2.5`：`https://www.notion.so/31b96011ac3e815d9d2dd330964f8601`
+  - `2.6`：`https://www.notion.so/31b96011ac3e81ce9f9ce0ba8ddc77e3`
