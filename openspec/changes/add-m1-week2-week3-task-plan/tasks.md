@@ -28,12 +28,12 @@
   前置依赖：1.2 接口清单 v0.1
   状态说明：Completed；完成情况：已完成真实 staging 三轮压测（500请求/轮 + 预热50 + 并发20），并产出原始 JSONL、Gate 汇总、5xx 分布报告；最差值结果 `p95=543.316ms`、`success=100%`、`5xx=0%`、`timeout=0%`，Gate 通过；证据链接：`docs/status/1.4-performance-baseline-plan.md`、`docs/status/1.4-performance-real-staging-execution-2026-03-06.md`、`docs/status/perf-test-data/staging_real_20260306_2_gate_report.json`、`docs/status/perf-test-data/staging_real_20260306_2_5xx_distribution.md`
 
-- [ ] 1.5 PoC 技术审查与口径冻结  
+- [x] 1.5 PoC 技术审查与口径冻结  
   负责人：李承泽；截止日期：2026-04-04  
   交付物：技术审查记录、指标口径冻结确认单  
   验收标准：明确准确率/P95/成功率/超时率测量协议，评审人签字通过  
   前置依赖：1.3、1.4 产出初版
-  状态说明：In Progress；当前情况：`1.3/1.4` 前置产出已就绪，待完成技术评审签字与口径冻结确认单；ETA：2026-04-02 完成技术审查初稿；证据链接：`docs/status/1.5-technical-integration-plan.md`、`docs/status/subagent-architecture-design-review-2026-03-05.md`
+  状态说明：Completed；完成情况：`1.3/1.4` 前置已验收，已完成技术评审签字与口径冻结确认（Tech Lead/QA/DevOps/PM）；证据链接：`docs/status/1.5-technical-integration-plan.md`、`docs/status/tech-review-and-freeze.md`
 
 - [ ] 1.6 运维与合规闭环任务  
   负责人：孙嘉宁；截止日期：2026-04-05  

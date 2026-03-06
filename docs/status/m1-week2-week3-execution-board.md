@@ -8,7 +8,7 @@
 | 1.2 | 王浩然 | 2026-04-02 | Week1 分支合入 | Completed |
 | 1.3 | 赵雨桐 | 2026-04-03 | 1.1, 1.2 | Completed |
 | 1.4 | 孙嘉宁 | 2026-04-03 | 1.2 | Completed |
-| 1.5 | 李承泽 | 2026-04-04 | 1.3, 1.4 | In Progress |
+| 1.5 | 李承泽 | 2026-04-04 | 1.3, 1.4 | Completed |
 | 1.6 | 孙嘉宁 | 2026-04-05 | 1.4 | In Progress |
 | 1.7 | 孙嘉宁 + 李承泽 | 2026-04-05 | 1.4, 1.6 | In Progress |
 | 1.8 | 周明远 | 2026-04-05 | 1.2~1.7 | In Progress |
@@ -69,7 +69,7 @@
 
 - `1.3`（Completed）：`dataset-m1-v1` 已冻结，样本总数=120（Markdown/TXT/DOCX 各40），双人抽检一致率=95.83%，manifest/hash 校验通过。
 - `1.4`（Completed）：真实 staging 三轮已完成（500*3，预热50/轮，并发20），最差值结果 `p95=543.316ms / success=100% / 5xx=0% / timeout=0%`，Gate 通过；证据：`docs/status/1.4-performance-real-staging-execution-2026-03-06.md`。
-- `1.5`（In Progress）：`1.3/1.4` 前置已满足，当前待完成技术评审签字与口径冻结确认单；ETA：2026-04-02 完成技术审查初稿。
+- `1.5`（Completed）：已完成技术评审签字与口径冻结确认（Tech Lead/QA/DevOps/PM 四方签收）；证据：`docs/status/1.5-technical-integration-plan.md`、`docs/status/tech-review-and-freeze.md`。
 - `1.6`（In Progress）：`1.4` 前置已满足，当前待完成告警链路验收与回滚演练首轮记录；ETA：2026-04-03 完成首轮演练。
 - `1.7`（In Progress）：`1.4` 前置已满足，当前待 `1.6` 演练结果确认后完成准入矩阵联签；ETA：2026-04-04 完成准入矩阵初版。
 - `1.8`（In Progress）：阻塞项为依赖 `1.3~1.7` 阻塞闭环；ETA：2026-04-05 完成 Week2 收口。
